@@ -19,7 +19,7 @@ def add_contact(contact):
 def remove_contact(id):
     global phone_book
     name = phone_book[id-1][0]
-    confirm = input(f'Вы хотите удалить контакт {name}? y/n ')
+    confirm = input(f'Вы хотите удалить контакт {name}? Для подтверждения, выберите y/n - ')
     if confirm.lower() == 'y':
         phone_book.pop(id-1)
         return True
@@ -29,23 +29,23 @@ def remove_contact(id):
 def change_contact(id):
     global phone_book
     name = phone_book[id][0]
-    confirm = input(f'Вы хотите изменить контакт {name}? y/n ')
+    confirm = input(f'Вы хотите изменить контакт {name}? Для подтверждения, выберите y/n - ')
     if confirm.lower() == 'y':
-        information_for_chage = str(phone_book[id]).split(';')
+        information_for_change = str(phone_book[id]).split(';')
         temp = int(input
             ('Введите цифру параметра, который хотите изменить: 1. Имя, 2. Телефон, 3. Комментарий: '))
         if temp == 1:
             name_contact = input('Введите новое имя: ')
-            information_for_chage[0] = name_contact
+            information_for_change[0] = name_contact
         elif temp == 2:
             telephone = input('Введите новый телефон: ')
-            information_for_chage[1] = telephone
+            information_for_change[1] = telephone
         elif temp == 3:
             comment = input('Введите новый комментарий: ')
-            information_for_chage[2] = comment
+            information_for_change[2] = comment
         else:
             print('Неверно')
-        phone_book[id] = list(information_for_chage)
+        phone_book[id] = list(information_for_change)
         return True
     return False
 
