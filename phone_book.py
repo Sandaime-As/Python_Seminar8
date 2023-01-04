@@ -54,7 +54,6 @@ def find_contact(search_text, phone_book):
     new_list_with_name = []
     for item in phone_book:
         new_list_with_name.append(str(item).split(';')[0][2:].lower())
-    # print(new_list_with_name)
     for i in range(len(new_list_with_name)):
         if new_list_with_name[i].find(search_text.lower()):
             return print(f'Данные необходимого пользователя: {phone_book[i]}')
